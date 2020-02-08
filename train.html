@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>train scheduler</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+    <!-- jQuery Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Moment.js Reference -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- Font Awesome Reference -->
+    <script src="https://use.fontawesome.com/8c1fdea402.js"></script>
+
+</head>
+
+<body>
+    <div class="container bg-primary text-white py-3 mb-3">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 text-center pt-2">
+
+            </div>
+            <div class="col-lg-7 col-md-8 col-sm-12 text-center pt-4">
+                <h1>train scheduler</h1>
+                <h4>current time: <span id="timer"></span></h4>
+            </div>
+        </div>
+    </div>
+    <div class="container px-0">
+        <div class="card mb-3">
+            <h5 class="card-header rounded-0 bg-primary text-white md-5">current train schedule</h5>
+            <div class="card-body">
+                <table class="table table-hover" id="train-table">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">train name</th>
+                            <th scope="col">desitination</th>
+                            <th scope="col">frequency (min)</th>
+                            <th scope="col">next arrival</th>
+                            <th scope="col">minutes away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container px-0">
+        <div class="card mb-3">
+            <h5 class="card-header  rounded-0 text-white bg-primary">add new train information</h5>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="trainname-input" class="font-weight-bold">train name</label>
+                        <input type="text" class="form-control" id="trainname-input" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination-input" class="font-weight-bold">destination</label>
+                        <input type="text" class="form-control" id="destination-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="firsttime-input" class="font-weight-bold">first train time (HH:mm - military
+                            time)</label>
+                        <input data-format=" hh:mm" type="text" class="form-control" id="firsttime-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="frequency-input" class="font-weight-bold">frequency (min)</label>
+                        <input type="number" class="form-control" id="frequency-input">
+                    </div>
+                    <button type="submit" class="btn btn-primary rounded-0 " id="add-train">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="train.js"></script>
+
+</body>
+
+</html>
